@@ -1,0 +1,22 @@
+@* create Template File *@
+@(frment: Form[Entidad])
+@import helper._
+
+<html>
+<title>Entidad</title>
+<body>
+<h1>Datos Entidad</h1>
+
+@helper.form(action = routes.EntidadController.save()){
+    @helper.inputText(frment("entNom"))
+    @helper.inputText(frment("entRuc"))
+    @helper.inputText(frment("entDir"))
+    @helper.inputText(frment("entTel"))
+    @helper.inputText(frment("entCont"))
+    @helper.inputText(frment("entInteres"))
+   
+    <input type="submit" value="Crear Entidad">
+}
+
+</body>
+</html>

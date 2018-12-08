@@ -1,0 +1,29 @@
+@* create Template File *@
+@(frmcli: Form[Cliente])
+@import helper._
+
+
+<html>
+<title>Cliente</title>
+<body>
+<h1>Datos Cliente</h1>
+
+@helper.form(action = routes.ClienteController.save()){
+   
+    @helper.inputText(frmcli("CliId"))
+    @helper.inputText(frmcli("CliCI"))
+    @helper.inputText(frmcli("CliNom"))
+    @helper.inputText(frmcli("CliApe"))
+    @helper.inputDate(frmcli("CliFecNac"))
+    @helper.inputText(frmcli("CliDir"))
+    @helper.inputText(frmcli("CliTel"))
+    @helper.inputDate(frmcli("CliFecIng"))
+    @helper.inputText(frmcli("CliCel"))
+    @helper.inputText(frmcli("CliTipCliId"))
+    @helper.inputText(frmcli("CliMail"))
+   
+    <input type="submit" value="Crear Cliente">
+}
+
+</body>
+</html>

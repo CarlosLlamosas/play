@@ -1,0 +1,84 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(message: String)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <title>@message</title>
+ <!-- Bootstrap -->
+ <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/bootstrap-4.0.0.css")">
+</head>
+<body background="/images/favicon.jpg" >
+<nav class="navbar navbar-expand-lg">
+ <a class="navbar-brand" href="#">PrestaSys</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+   <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
+   <li class="nav-item"> <a class="nav-link" href="#">Prestamo</a> </li>
+   <li class="nav-item"> <a class="nav-link" href="@routes.EntidadController.index()">Entidad</a> </li>
+   <li class="nav-item"> <a class="nav-link" href="@routes.ClienteController.index()">Cliente</a> </li>
+   <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true  ">  </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+     <a class="dropdown-item" href="@routes.ClienteController.index()">Cliente</a>
+     <a class="dropdown-item" href="@routes.EntidadController.index()">Entidad</a>
+    </div>
+   </li>
+   <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+ </div>
+</nav>
+<section>
+ <div class="container"><div class="container">
+  <div class="jumbotron-fluid alert-light"> </div>
+  <div align="right" class="badge-primary">
+  </div>
+  <div align="center" class="bg-light border">
+   <h1 class="text-center text-capitalize">Team Play Framework</h1>
+  </div>
+ </div></div>
+ <div class="container ">
+  <div class="row">
+   <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="/images/adri.jpg" data-holder-rendered="true">
+    <h3 style="border-color: aliceblue" class="text-white">AG </h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+   </div>
+   <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+    <img class="rounded-circle" alt="140x140" style="width: 140px height: 140px" src="/images/karlos.jpg" data-holder-rendered="true">
+    <h3 class="text-white">CL</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+   </div>
+   <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+    <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="/images/belen.jpg" data-holder-rendered="true">
+    <h3 class="text-white">BG</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="container"> </div>
+<footer class="text-center">
+ <div class="container">
+  <div class="row">
+   <div class="col-12">
+    <p class="text-white" style="">Copyright © MyWebsite. All rights reserved.</p>
+   </div>
+  </div>
+ </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.0.0.js"></script>
+</body>
+</html>

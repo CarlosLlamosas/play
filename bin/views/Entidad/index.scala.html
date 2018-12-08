@@ -1,0 +1,13 @@
+@* index Template File *@
+@(ent:List[Entidad])
+<html>
+<title>Entidad</title>
+<body>
+<h1> Entidades </h1>
+@for(Entidad <- ent){
+ent.EntNom
+}
+
+<a href="@routes.EntidadController.create()">Crear Entidad</a>
+</body>
+</html>

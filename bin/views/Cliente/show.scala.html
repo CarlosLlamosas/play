@@ -1,0 +1,19 @@
+@* show Template File *@
+@(cli: Cliente)
+
+<html>
+<title>@cli.CliCI</title>
+<body>
+<h2>@cli.CliNom</h2>
+<p>@cli.CliApe</p>
+<p>@cli.CliCI</p>
+<p>@cli.CliDir</p>
+<p>@cli.CliTel</p>
+
+<div>
+	<a href="@routes.ClienteController.edit(cli.CliId)">Editar</a>
+	<a href="@routes.ClienteController.delete(cli.CliId)">Eliminar</a>
+</div>
+  
+</body>
+</html>

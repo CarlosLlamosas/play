@@ -1,9 +1,15 @@
 package controllers;
 
 import models.Cliente;
+import models.Entidad;
 import play.libs.Json;
 import play.mvc.*;
+
+
 import java.util.*;
+
+
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 
@@ -12,12 +18,11 @@ public class ClienteController extends Controller {
 	 public Result lista() {
 		List<Cliente> cli = Cliente.find.all();
 		JsonNode jj = Json.toJson(cli);
-
 		return ok(jj);
 	}
 
 	public Result save() {
-		JsonNode jj = Json.toJson(request().body());
+		JsonNode jj = request().body().asJson();
 		Cliente cli = Json.fromJson(jj, Cliente.class);
 		cli.save();
 
@@ -33,9 +38,9 @@ public class ClienteController extends Controller {
 		return ok(cli.CliNom + " Fue Eliminado");
 	}
 
-	public Result update(String json) {
+	public Result update() {
 
-		JsonNode jj = Json.toJson(json);
+		JsonNode jj = request().body().asJson();
 		Cliente cli = Json.fromJson(jj, Cliente.class);
 		Cliente oldCli = Cliente.find.byId(cli.CliId);
 
@@ -43,7 +48,7 @@ public class ClienteController extends Controller {
 			oldCli=cli;
 			oldCli.update();
 			
-			return ok(cli.CliNom + " Fue Modificado");
+			return ok(oldCli.CliNom + " Fue Modificado");
 		}
 		return null;
 	}

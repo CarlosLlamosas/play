@@ -12,7 +12,7 @@ libraryDependencies += guice
 
 // Test Database
 libraryDependencies += "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
-//"com.h2database" % "h2" % "1.4.197"
+libraryDependencies += "com.h2database" % "h2" % "1.4.197"
 libraryDependencies += javaForms
 libraryDependencies ++= Seq(evolutions, jdbc)
 

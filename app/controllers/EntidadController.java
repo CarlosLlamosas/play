@@ -19,34 +19,35 @@ public class EntidadController extends Controller {
 		return ok(jj);
 	}
 
-	public Result save(String json) {
-		JsonNode jj = Json.toJson(json);
-		Cliente cli = Json.fromJson(jj, Cliente.class);
-		cli.save();
+	public Result save() {
+		JsonNode jj = request().body().asJson();
+		Entidad ent = Json.fromJson(jj, Entidad.class);
+		ent.save();
 
-		return ok(cli.CliNom + " Fue Agregado");
-	}
+		return ok(ent.entNom + " Fue Agregado");
+}
+	
 
 	public Result delete(Integer id) {
-		Cliente cli = Cliente.find.byId(id);
-		if (cli == null) {
-			return notFound("Cliente No existe");
+		Entidad ent = Entidad.find.byId(id);
+		if (ent == null) {
+			return notFound("Entidad No existe");
 		}
-		cli.delete();
-		return ok(cli.CliNom + " Fue Eliminado");
+		ent.delete();
+		return ok(ent.entNom + " Fue Eliminado");
 	}
 
-	public Result update(String json) {
+	public Result update() {
 
-		JsonNode jj = Json.toJson(json);
-		Cliente cli = Json.fromJson(jj, Cliente.class);
-		Cliente oldCli = Cliente.find.byId(cli.CliId);
+		JsonNode jj = request().body().asJson();
+		Entidad ent = Json.fromJson(jj, Entidad.class);
+		Entidad oldent = Entidad.find.byId(ent.entId);
 
-		if (oldCli != null) {
-			oldCli=cli;
-			oldCli.update();
+		if (oldent != null) {
+			oldent= ent;
+			oldent.update();
 			
-			return ok(cli.CliNom + " Fue Modificado");
+			return ok(ent.entNom + " Fue Modificado");
 		}
 		return null;
 	}

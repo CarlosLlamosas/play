@@ -2,6 +2,8 @@ package models;
 
 import io.ebean.Finder;
 import io.ebean.Model;
+
+import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -15,10 +17,13 @@ public class Entidad extends Model {
 	public String entDir;
 	public String entTel;
 	public String entCont;
+	public Integer cant_empleados;
+	public Date fecha_creacion;
+	public String lema;
 	
 	
-
-    public Entidad(Integer entId, String entNom, String entRuc, String entDir, String entTel, String entCont) {
+	public Entidad(Integer entId, String entNom, String entRuc, String entDir, String entTel, String entCont,
+			Integer cant_empleados, Date fecha_creacion, String lema) {
 		super();
 		this.entId = entId;
 		this.entNom = entNom;
@@ -26,7 +31,12 @@ public class Entidad extends Model {
 		this.entDir = entDir;
 		this.entTel = entTel;
 		this.entCont = entCont;
+		this.cant_empleados = cant_empleados;
+		this.fecha_creacion = fecha_creacion;
+		this.lema = lema;
 	}
+
+  
 
 	public Entidad(){
     	

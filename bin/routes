@@ -13,12 +13,22 @@ GET     /message                     controllers.AsyncController.message
 GET		/cliente/lista				 controllers.ClienteController.lista()
 GET     /cliente/:id                 controllers.ClienteController.show(id : Integer)
 GET     /cliente/edit/:id            controllers.ClienteController.edit(id : Integer)
-POST    /cliente/edit                controllers.ClienteController.update(json : String)
-PUT     /cliente/create              controllers.ClienteController.save(json : String)
+POST    /cliente/edit                controllers.ClienteController.update()
+PUT     /cliente/create              controllers.ClienteController.save()
 GET     /cliente/delete/:id          controllers.ClienteController.delete(id : Integer)
 
 #Entidad
 GET		/entidad/lista				 controllers.EntidadController.lista()
+PUT     /entidad/create              controllers.EntidadController.save()
+GET     /entidad/delete/:id          controllers.EntidadController.delete(id : Integer)
+POST    /entidad/edit                controllers.EntidadController.update()
+
+#TipoCliente
+GET		/tipocliente/lista				 controllers.TipoClienteController.lista()
+PUT     /tipocliente/create              controllers.TipoClienteController.save()
+GET     /tipocliente/delete/:id          controllers.TipoClienteController.delete(id : Integer)
+POST    /tipocliente/edit                controllers.TipoClienteController.update()
+
 
 
 

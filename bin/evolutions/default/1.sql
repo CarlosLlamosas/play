@@ -58,9 +58,9 @@ create table tipo_cliente (
   tip_cli_id                    integer auto_increment not null,
   descripcion                   varchar(255),
   cant_max_cuota                integer,
-  codigo						integer,
-  observacion					varchar (255),
-  fecha_carga					date,
+  observacion                   varchar(255),
+  codigo                        integer,
+  fecha_carga                   date,
   constraint pk_tipo_cliente primary key (tip_cli_id)
 );
 

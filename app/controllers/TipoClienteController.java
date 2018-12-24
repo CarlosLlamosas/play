@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+import models.Cliente;
 import models.TipoCliente;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -16,6 +17,15 @@ public class TipoClienteController extends Controller{
 			JsonNode jj = Json.toJson(tcli);
 			return ok(jj);
 		}
+	
+	public Result show(Integer id) {
+		TipoCliente tcli = TipoCliente.find.byId(id);
+		if (tcli == null) {
+			return notFound("Tipo de Cliente no existe");
+		}
+		JsonNode jj = Json.toJson(tcli);
+		return ok(jj);
+	}
 
 		public Result save() {
 			JsonNode jj = request().body().asJson();

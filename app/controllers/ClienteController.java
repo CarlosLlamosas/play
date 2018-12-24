@@ -1,7 +1,6 @@
 package controllers;
 
 import models.Cliente;
-import models.Entidad;
 import play.libs.Json;
 import play.mvc.*;
 

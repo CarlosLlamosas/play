@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-import models.Cliente;
 import models.Entidad;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -55,22 +54,22 @@ public class EntidadController extends Controller {
 	public Result edit(Integer id) {
 		// System.out.println(id);
 
-		Cliente cli = Cliente.find.byId(id);
-		if (cli == null) {
-			return notFound("Cliente no Existe");
+		Entidad ent = Entidad.find.byId(id);
+		if (ent == null) {
+			return notFound("Entidad no Existe");
 		}
 
-		JsonNode jj = Json.toJson(cli);
+		JsonNode jj = Json.toJson(ent);
 
 		return ok(jj);
 	}
 
 	public Result show(Integer id) {
-		Cliente cli = Cliente.find.byId(id);
-		if (cli == null) {
-			return notFound("Cliente no existe");
+		Entidad ent = Entidad.find.byId(id);
+		if (ent == null) {
+			return notFound("Entidad no existe");
 		}
-		JsonNode jj = Json.toJson(cli);
+		JsonNode jj = Json.toJson(ent);
 		return ok(jj);
 	}
 }

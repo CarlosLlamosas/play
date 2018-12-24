@@ -3,34 +3,54 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                            controllers.HomeController.index
+GET      /                     controllers.HomeController.index
 # An example controller showing how to use dependency injection
-GET     /count                       controllers.CountController.count
+GET      /count                controllers.CountController.count
 # An example controller showing how to write asynchronous code
-GET     /message                     controllers.AsyncController.message
+GET      /message              controllers.AsyncController.message
 
 #Cliente
-GET		/cliente/lista				 controllers.ClienteController.lista()
-GET     /cliente/:id                 controllers.ClienteController.show(id : Integer)
-GET     /cliente/edit/:id            controllers.ClienteController.edit(id : Integer)
-POST    /cliente/edit                controllers.ClienteController.update()
-PUT     /cliente/create              controllers.ClienteController.save()
-GET     /cliente/delete/:id          controllers.ClienteController.delete(id : Integer)
+GET      /cliente              controllers.ClienteController.lista()
+GET      /cliente/:id          controllers.ClienteController.show(id : Integer)
+PUT      /cliente		       controllers.ClienteController.update()
+POST     /cliente		       controllers.ClienteController.save()
+DELETE   /cliente/:id		   controllers.ClienteController.delete(id : Integer)
 
 #Entidad
-GET		/entidad/lista				 controllers.EntidadController.lista()
-PUT     /entidad/create              controllers.EntidadController.save()
-GET     /entidad/delete/:id          controllers.EntidadController.delete(id : Integer)
-POST    /entidad/edit                controllers.EntidadController.update()
+GET      /entidad              controllers.EntidadController.lista()
+POST     /entidad              controllers.EntidadController.save()
+DELETE   /entidad/:id          controllers.EntidadController.delete(id : Integer)
+PUT      /entidad              controllers.EntidadController.update()
 
 #TipoCliente
-GET		/tipocliente/lista				 controllers.TipoClienteController.lista()
-PUT     /tipocliente/create              controllers.TipoClienteController.save()
-GET     /tipocliente/delete/:id          controllers.TipoClienteController.delete(id : Integer)
-POST    /tipocliente/edit                controllers.TipoClienteController.update()
+GET      /tipocliente          controllers.TipoClienteController.lista()
+PUT      /tipocliente          controllers.TipoClienteController.save()
+DELETE   /tipocliente/:id      controllers.TipoClienteController.delete(id : Integer)
+POST     /tipocliente          controllers.TipoClienteController.update()
+
+#Prestamo
+GET      /prestamo             controllers.PrestamoController.lista()
+GET      /prestamo/:id         controllers.PrestamoController.show(id : Integer)
+PUT      /prestamo             controllers.PrestamoController.update()
+POST     /prestamo             controllers.PrestamoController.save()
+DELETE   /prestamo/:id         controllers.PrestamoController.delete(id : Integer)
+
+#Usuario
+GET      /usuario              controllers.UsuarioController.lista()
+GET      /usuario/:id          controllers.UsuarioController.show(id : Integer)
+PUT      /usuario              controllers.UsuarioController.update()
+POST     /usuario              controllers.UsuarioController.save()
+DELETE   /usuario/:id          controllers.UsuarioController.delete(id : Integer)
+
+#Cuota
+GET      /cuota                controllers.CuotaController.lista()
+GET      /cuota/:id            controllers.CuotaController.show(id : Integer)
+PUT      /cuota                controllers.CuotaController.update()
+POST     /cuota                controllers.CuotaController.save()
+DELETE   /cuota/:id            controllers.CuotaController.delete(id : Integer)
 
 
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET      /assets/*file         controllers.Assets.versioned(path="/public", file: Asset)
